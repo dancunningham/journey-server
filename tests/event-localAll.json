@@ -1,4 +1,4 @@
 {
-    "input-file" : "tests/LocationHistory.json",
+    "input-file" : "testdata/LocationHistory.json",
     "output-folder" : "testenv/results/"
 }

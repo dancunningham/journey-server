@@ -88,8 +88,16 @@ init-test-local:
 	python testenv/bin/pip install -r requirements.txt ; \
 	deactivate
 
+get-testdata:
+	@if [ ! -d "testdata" ]; then \
+		echo "downloading testdata (this may take a while) ..." ; \
+		mkdir testdata ; \
+		aws s3 sync s3://$(LAMBDA_TESTDATA) testdata; \
+	fi
+
 test-local:
-	@if [ ! -d "testenv" ]; then $(error "testenv folder does not exist. Please run init-test-local first."); fi
+	@if [ ! -d "testenv" ]; then echo "testenv folder does not exist. Please run 'make init-test-local' first."; false; fi
+	@if [ ! -d "testdata" ]; then echo "testdata folder does not exist. Please run 'make get-testdata' first."; false; fi
 	. testenv/bin/activate ; \
 	export $(subst ;,,$(LOCAL_VARIABLES)) ; \
 	python testenv/bin/python-lambda-local -l lib/ -f $(LOCAL_HANDLER) -t 30000 $(LOCAL_APP) $(LOCAL_TESTEVENT) ; \
