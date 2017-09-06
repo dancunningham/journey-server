@@ -1,0 +1,4 @@
+{
+    "input-file" : "tests/LocationHistory.json",
+    "output-folder" : "testenv/results/"
+}

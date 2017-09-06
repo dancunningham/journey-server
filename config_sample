@@ -1,0 +1,33 @@
+#rename this file to config and add your respective keys
+
+# environment variable passed when creating a new function (comma separated!)
+LAMBDA_VARIABLES=ACCESS_KEY=, \
+		SECRET_KEY=, \
+		GOOGLEPLACES_API_KEY=, \
+		GOOGLEMAPS_API_KEY=
+
+# lambda function name
+LAMBDA_FUNCTION=calculateFlights2
+# region to use when creating a new function (deploy-create)
+LAMBDA_REGION=eu-west-2
+# role to apply when creating a new function (deploy-create)
+LAMBDA_ROLE=arn:aws:iam::062090815577:role/lambda-calcFlights-role
+# handler function to be called by lambda
+LAMBDA_HANDLER=main.handler
+# S3 bucket to upload your code to
+LAMBDA_SRCBUCKET=journey-appsource
+# S3 bucket to trigger your code on any put event
+LAMBDA_TRIGGER=journey-uploads
+
+# variables for local testing (not comma separated!)
+LOCAL_VARIABLES=ACCESS_KEY= \
+		SECRET_KEY= \
+		GOOGLEPLACES_API_KEY= \
+		GOOGLEMAPS_API_KEY=
+
+LOCAL_HANDLER=handler
+LOCAL_APP=Journey/main.py
+LOCAL_TESTEVENT=tests/event-local10.json
+
+# variables for local testing
+REMOTE_TESTEVENT=tests/event-local10.json
