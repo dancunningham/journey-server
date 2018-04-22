@@ -6,7 +6,7 @@ check-aws:
 	#ToDo: check if aws exists, prompt to install it otherwise
 
 build :
-	rm -r dist
+	rm -rf dist
 	mkdir dist
 	@echo "Packaging dist-package ..."
 	cd lambda-libs; zip -r -q ../dist/dist-package.zip *
