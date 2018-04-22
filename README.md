@@ -26,12 +26,7 @@ run make test-local
 build
 - create the package for AWS lambda
 
-deploy-direct-create
-- this will create a lambda function and directly upload the dist package created by build
-- Remember to set any triggers manually if needed.
-
-deploy-direct-update
-- this will update an existing lambda function and directly upload the dist package created by build
+*Most reliable way to install is using s3-upload + deploy-s3-update*
 
 s3-upload
 - uploads your package to s3
@@ -42,6 +37,13 @@ deploy-s3-create
 
 deploy-s3-update
 - this will update an existing lambda function and use the dist package you uploaded to s3
+
+deploy-direct-create
+- this will create a lambda function and directly upload the dist package created by build
+- Remember to set any triggers manually if needed.
+
+deploy-direct-update
+- this will update an existing lambda function and directly upload the dist package created by build
 
 delete-function : check-aws
 - delete your function from s3
