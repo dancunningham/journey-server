@@ -209,8 +209,11 @@ def getCO2(x):
 			#c
 			'c' : 2354.81
 			}
+	# Add Distance Correction for detours and holding patterns, and inefficiencies in the air traffic control systems [km]
+	distance = x + p['DC'];
+	
 	#TODO: using economy only for now
-	E = ((p['a']*x**2) + (p['b']*x) + p['c']) / (p['S'] * p['PLF']) 
+	E = ((p['a']*distance**2) + (p['b']*distance) + p['c']) / (p['S'] * p['PLF']) 
 	E = E * (1 - p['CF']) * p['ECW'] * (p['EF'] * p['M'] + p['P'])
 	return E;
 
