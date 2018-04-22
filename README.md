@@ -26,7 +26,7 @@ run make test-local
 build
 - create the package for AWS lambda
 
-*Most reliable way to install is using s3-upload + deploy-s3-update*
+*Most reliable way to install is using deploy-s3-create or deploy-s3-update*
 
 s3-upload
 - uploads your package to s3
