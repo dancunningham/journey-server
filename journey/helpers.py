@@ -128,7 +128,7 @@ def getCO2(x):
 			# Detour constant
 			'DC' : 50,
 			#1- Cargo factor
-			'CF' : 0.951,
+			'CF' : 0.049,
 			# Economy class weight
 			'ECW' : 0.960,
 			# Business class weight
@@ -159,7 +159,7 @@ def getCO2(x):
 			# Detour constant
 			'DC' : 125,
 			#1- Cargo factor
-			'CF' : 0.951,
+			'CF' : 0.049,
 			# Economy class weight
 			'ECW' : 0.800,
 			# Business class weight
@@ -189,7 +189,7 @@ def getCO2(x):
 			# Detour constant
 			'DC' : 87.5,
 			#1- Cargo factor
-			'CF' : 0.951,
+			'CF' : 0.049,
 			# Economy class weight
 			'ECW' : 0.880,
 			# Business class weight
